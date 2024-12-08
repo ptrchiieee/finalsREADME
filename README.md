@@ -114,7 +114,9 @@ Error (400 - Invalid email): "message": "Invalid email format"
 Error (400): "message": "Invalid birthdate format. Use YYYY-MM-DD"
 Error (409 - Duplicate email): "message": "Duplicate email"
 
+* To delete a specific student, use the DELETE method with the endpoint URL http://localhost/student-management-api/index.php?request=students/{id}, replacing {id} with the student_id of the student to be deleted. No request body is required. A successful deletion will return a response with status 200 and the message: "Student deleted successfully". If the specified student is not found, the response will have status 404 and the message: "Error deleting student".
 
+* To delete all students, use the DELETE method with the endpoint URL http://localhost/student-management-api/index.php?request=students. No request body is required. A successful operation will return status 200 with the message: "All students deleted successfully". If an error occurs during the deletion process, the response will have status 500 and the message: "Error deleting all students".
 
 
 # SQL Queries & Dummy Data
