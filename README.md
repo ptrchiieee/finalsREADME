@@ -49,33 +49,41 @@ Step-by-Step Setup
     1. Navigate to the Import tab.
     2. Choose the SQL file you provided with the project.
     3. Click Go to execute and set up the tables (students and courses) with dummy data.
+
 2. Configure the Database Connection
 - Locate the db.php file in your project folder (e.g., C:\xampp\htdocs\student-management-api\db.php).
 - Verify or update the following settings to match your environment:
+  
 3. Place the Project in the XAMPP Directory
 - Copy the entire project folder into the htdocs directory of your XAMPP installation.
 - Example: C:\xampp\htdocs\student-management-api
+  
 4. Start the Server
 - Open your browser and navigate to:
 - This should display a message or response indicating the API is set up. (http://localhost/student-management-api/index.php)
 
-5.Set the API Key for Secure Access
+5. Set the API Key for Secure Access
 - In Postman or your testing tool:
     1. Add a header named API-KEY.
     2. Set the value to itfinaltesting
+
 6. Testing the API
 - Use tools like Postman to test the API endpoints.
+  
 1. Example: To test student creation:
         - Method: POST
         - URL: http://localhost/student-management-api/index.php?request=students
-2. Example: To Test Retrieving All Students
+   
+3. Example: To Test Retrieving All Students
         - Method: GET
         - URL: http://localhost/student-management-api/index.php?request=students
-3. Example: To Test Retrieving a Specific Student
+   
+5. Example: To Test Retrieving a Specific Student
         - Method: GET
         - URL: http://localhost/student-management-api/index.php?request=students/{id} 
             Replace {id} with the specific student_id
-4. Example: To Test Retrieving Students with Filters
+   
+7. Example: To Test Retrieving Students with Filters
         - Method: GET
         - URL: http://localhost/student-management-api/index.php?request=students&search={name}
             Replace {name} with the student’s name or part of the name.
@@ -87,15 +95,18 @@ Step-by-Step Setup
 - For filtering by email:
         - URL: http://localhost/student-management-api/index.php?request=students&search={email}
               Replace {email} with the student’s email address.
+  
 5. Example: To Test Updating Student Information
         -Method: PATCH
         - URL: http://localhost/student-management-api/index.php?request=students/{id}
               Replace {id} with the specific student_id of the student you want to update.
-6. Example: To Test Deleting a Specific Student
+   
+7. Example: To Test Deleting a Specific Student
         - Method: DELETE
         - URL: http://localhost/student-management-api/index.php?request=students/{id}
             Replace {id} with the specific student_id of the student you want to delete.
-7. Example: To Test Deleting All Students
+   
+9. Example: To Test Deleting All Student
         - Method: DELETE
         - URL: http://localhost/student-management-api/index.php?request=students
             This will delete all students from the database.
