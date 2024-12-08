@@ -35,13 +35,89 @@ The purpose of this API is to provide a robust backend system for managing stude
 ## Setup Instructions
 
 # API Endpoints
+Below is the list of API endpoints, including HTTP methods, endpoint URLs, request bodies, and sample responses.
 
-## HTTP Methods
-## Endpoint URLs
-## Request Body
-## Sample Response
+* Create a New Student
+HTTP Method: POST
+Endpoint URL: http://localhost/student-management-api/index.php?request=students
+Request body: 
+{
+  "first_name": "John",
+  "last_name": "Doe",
+  "email": "john.doe@example.com",
+  "birthdate": "2000-05-15",
+  "course_id": 2
+}
+Sample response:
+Success (201): "message": "Student created successfully"
+Error (400 - Invalid email): "message": "Invalid email format"
+Error (409 - Duplicate email): "message": "Duplicate email"
 
-## SQL Queries & Dummy Data
+* Retrieve All Students
+HTTP Method: GET
+Endpoint URL: http://localhost/student-management-api/index.php?request=students
+Sample response:
+Success (200): {
+    "student_id": 1,
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "john.doe@example.com",
+    "birthdate": "2000-05-15",
+    "course_id": 2
+  }
+No Match (200): "message": "No students found"
+
+* Retrieve Specific Students
+HTTP Method: GET
+Endpoint URL: http://localhost/student-management-api/index.php?request=students/49
+Sample response:
+Success (200): {
+    "student_id": "49",
+    "first_name": "Emma",
+    "last_name": "Wilson",
+    "email": "emma.wilson@example.com",
+    "birthdate": "1999-12-01",
+    "course_id": "1"
+}
+Error (404): "message": "Student not found"
+
+* Retrieve Students With Filter by Name, Course ID, and Email.
+HTTP Method: Get
+Endpoint URLs:
+Filter by name: http://localhost/student-management-api/index.php?request=students&search=riley
+Filter by name and course id: http://localhost/student-management-api/index.php?request=students&search=riley&course_id=2
+Filter by email address: http://localhost/student-management-api/index.php?request=students&search=riley.clark@example.com 
+Request body: {
+        "student_id": "62",
+        "first_name": "Riley",
+        "last_name": "Clark",
+        "email": "riley.clark@example.com",
+        "birthdate": "1999-05-25",
+        "course_id": "2"
+    }
+
+* Update Student Information
+HTTP Method: PUT or PATCH
+Endpoint URL: http://localhost/student-management-api/index.php?request=students/62
+Request Body (Partial or Full):
+{
+    "student_id": "62",
+    "first_name": "Riley",
+    "last_name": "Clark",
+    "email": "riley.clark@example.com",
+    "birthdate": "1999-05-25",
+    "course_id": "2"
+}
+Sample responses:
+Success (200): "message": "Student updated successfully"
+Error (400 - Invalid email): "message": "Invalid email format"
+Error (400): "message": "Invalid birthdate format. Use YYYY-MM-DD"
+Error (409 - Duplicate email): "message": "Duplicate email"
+
+
+
+
+# SQL Queries & Dummy Data
 
 CREATE TABLE courses (
     course_id INT AUTO_INCREMENT PRIMARY KEY,
