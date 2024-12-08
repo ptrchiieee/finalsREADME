@@ -34,6 +34,43 @@ The purpose of this API is to provide a robust backend system for managing stude
 
 ## Setup Instructions
 
+1. Install XAMPP (or ensure it is already installed on your system).
+2. Start the Apache and MySQL services using the XAMPP Control Panel.
+3. Install tools like Postman for testing API endpoints
+
+Step-by-Step Setup
+
+1. Import the SQL File
+- Open phpMyAdmin in your browser.
+- Create a new database named student_management:
+    1. Go to the Databases tab.
+    2. Enter student_management as the database name and click Create.
+- Import the SQL script:
+    1. Navigate to the Import tab.
+    2. Choose the SQL file you provided with the project.
+    3. Click Go to execute and set up the tables (students and courses) with dummy data.
+2. Configure the Database Connection
+- Locate the db.php file in your project folder (e.g., C:\xampp\htdocs\student-management-api\db.php).
+- Verify or update the following settings to match your environment:
+3. Place the Project in the XAMPP Directory
+- Copy the entire project folder into the htdocs directory of your XAMPP installation.
+- Example: C:\xampp\htdocs\student-management-api
+4. Start the Server
+- Open your browser and navigate to:
+- This should display a message or response indicating the API is set up. (http://localhost/student-management-api/index.php)
+5.Set the API Key for Secure Access
+- In Postman or your testing tool:
+    1. Add a header named API-KEY.
+    2. Set the value to itfinaltesting
+6. Testing the API
+- Use tools like Postman to test the API endpoints.
+- Example: To test student creation:
+- Method: POST
+- URL: http://localhost/student-management-api/index.php?request=students
+
+
+
+
 # API Endpoints
 Below is the list of API endpoints, including HTTP methods, endpoint URLs, request bodies, and sample responses.
 
