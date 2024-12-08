@@ -58,6 +58,7 @@ Step-by-Step Setup
 4. Start the Server
 - Open your browser and navigate to:
 - This should display a message or response indicating the API is set up. (http://localhost/student-management-api/index.php)
+
 5.Set the API Key for Secure Access
 - In Postman or your testing tool:
     1. Add a header named API-KEY.
