@@ -64,11 +64,40 @@ Step-by-Step Setup
     2. Set the value to itfinaltesting
 6. Testing the API
 - Use tools like Postman to test the API endpoints.
-- Example: To test student creation:
-- Method: POST
-- URL: http://localhost/student-management-api/index.php?request=students
+1. Example: To test student creation:
+        - Method: POST
+        - URL: http://localhost/student-management-api/index.php?request=students
+2. Example: To Test Retrieving All Students
+        - Method: GET
+        - URL: http://localhost/student-management-api/index.php?request=students
+3. Example: To Test Retrieving a Specific Student
+        - Method: GET
+        - URL: http://localhost/student-management-api/index.php?request=students/{id} 
+            Replace {id} with the specific student_id
+4. Example: To Test Retrieving Students with Filters
+        - Method: GET
+        - URL: http://localhost/student-management-api/index.php?request=students&search={name}
+            Replace {name} with the student’s name or part of the name.
 
+- For filtering by name and course ID:
+        - URL: http://localhost/student-management-api/index.php?request=students&search={name}&course_id={id} 
+            Replace {name} with the student’s name and {id} with the course ID.
 
+- For filtering by email:
+        - URL: http://localhost/student-management-api/index.php?request=students&search={email}
+              Replace {email} with the student’s email address.
+5. Example: To Test Updating Student Information
+        -Method: PATCH
+        - URL: http://localhost/student-management-api/index.php?request=students/{id}
+              Replace {id} with the specific student_id of the student you want to update.
+6. Example: To Test Deleting a Specific Student
+        - Method: DELETE
+        - URL: http://localhost/student-management-api/index.php?request=students/{id}
+            Replace {id} with the specific student_id of the student you want to delete.
+7. Example: To Test Deleting All Students
+        - Method: DELETE
+        - URL: http://localhost/student-management-api/index.php?request=students
+            This will delete all students from the database.
 
 
 # API Endpoints
